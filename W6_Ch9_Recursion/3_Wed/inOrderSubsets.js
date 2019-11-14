@@ -19,3 +19,15 @@ function inOrderSubsets(str, solutions = [], partial = '') {
 }
 
 console.log(inOrderSubsets('abcd').join(", "));
+
+// another solution
+
+function IOS(s, sub="", i=0){
+  if(s.length === i){
+    return [sub];
+  } else {
+    return IOS(s, sub+s[i], i+1).concat(IOS(s, sub, i+1)); 
+  }
+}
+
+console.log(IOS("abc"));
